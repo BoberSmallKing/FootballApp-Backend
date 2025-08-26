@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'api',
     'blog',
     'rest_framework'
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 REST_FRAMEWORK = {
