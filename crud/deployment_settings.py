@@ -41,3 +41,6 @@ DATABASES = {
           conn_max_age=600
       )
 }
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
