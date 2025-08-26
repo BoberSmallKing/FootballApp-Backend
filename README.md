@@ -1,4 +1,4 @@
-# Django + React Project Setup
+# Django Project Setup
 
 ## Backend
 
@@ -21,9 +21,4 @@ python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
 
-## Frontend
-
-cd ..
-cd frontend
-npm install
-npm run dev
+```
