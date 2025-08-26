@@ -22,7 +22,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-   'https://footballapp-frontend.onrender.com/',
+   'https://footballapp-frontend.onrender.com',
 ]
 
 STORAGES = {
