@@ -1,5 +1,6 @@
 from pathlib import Path
 from datetime import timedelta
+import cloudinary_storage
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -146,14 +147,14 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+MEDIA_URL= '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+    'CLOUD_NAME': "drdhk4vom",
+    'API_KEY': "767443226281842",
+    'API_SECRET': "95jo-vV-e7qz1MUkqDpyIxQvins",
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
