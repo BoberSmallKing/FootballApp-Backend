@@ -1,11 +1,17 @@
 from django.shortcuts import render
 from rest_framework import viewsets, permissions, status
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.views import APIView
 
 from .serializers import * 
 from .models import * 
 from rest_framework.response import Response
+
+
+
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
 
 class LogoutView(APIView):
      permission_classes = (permissions.IsAuthenticated,)
@@ -30,7 +36,8 @@ class RegisterView(APIView):
             return Response({
                 'user': {
                     'id': user.id,
-                    'username': user.username
+                    'username': user.username,
+                    'is_staff': user.is_staff, 
                 },
                 'refresh': str(refresh),
                 'access': str(refresh.access_token),
@@ -68,4 +75,6 @@ class ArticleViewset(viewsets.ViewSet):
             return Response(serializer.data, status=201)
         else:
             return Response(serializer.errors, status=400)
+        
+
 
